@@ -4,8 +4,9 @@ import com.example.projet0.entities.Client;
 import com.example.projet0.repositories.ClientRepository;
 
 import java.util.List;
+import java.util.Optional;
 
-public class ClientService implements IClientService{
+public class ClientServiceImpl implements IClientService{
 
     ClientRepository clientRepository;
     @Override
@@ -25,13 +26,13 @@ public class ClientService implements IClientService{
 
     @Override
     public Client retrieveClient(Long idClient) {
-        return clientRepository.findById(idClient).get();
+        Optional<Client> client = clientRepository.findById(idClient);
+        return client.orElseThrow(() -> new RuntimeException("Client not found for id: " + idClient));
     }
 
     @Override
     public void removeClient(Long idClient) {
         clientRepository.deleteById(idClient);
-
     }
 
     @Override

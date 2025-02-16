@@ -1,10 +1,8 @@
 package com.example.projet0.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.Set;
 
@@ -13,18 +11,19 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class ChefCuisinier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idChefCuisinier;
+    Long idChefCuisinier;
 
-    private String nom;
+    String nom;
 
-    private String prenom;
+    String prenom;
 
     @Enumerated(EnumType.STRING)
-    private TypeChef typeChef;
+    TypeChef typeChef;
 
     @ManyToMany(mappedBy = "chefCuisiniers")
-    private Set<Menu> menus;
+    Set<Menu> menus;
 }

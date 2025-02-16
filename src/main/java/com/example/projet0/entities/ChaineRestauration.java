@@ -1,10 +1,9 @@
 package com.example.projet0.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
+
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -13,16 +12,17 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class ChaineRestauration {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idChaineRestauration;
+    Long idChaineRestauration;
 
-    private String libelle;
+    String libelle;
 
-    private LocalDate dateCreation;
+    LocalDate dateCreation;
 
     @OneToMany(mappedBy = "chaineRestauration")
-    private Set<Restaurant> restaurants;
+    Set<Restaurant> restaurants;
 
 }

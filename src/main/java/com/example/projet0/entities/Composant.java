@@ -4,25 +4,24 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Composant {
     @Id
-    private Long idComposant;
-    private String nomComposant;
-    private float prix;
+    Long idComposant;
+    String nomComposant;
+    float prix;
 
     @ManyToOne
-    private Menu menu;
+    Menu menu;
 
     @OneToOne
-    private Detailcomposant detailcomposant;
+    Detailcomposant detailcomposant;
 }

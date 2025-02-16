@@ -1,10 +1,8 @@
 package com.example.projet0.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 
@@ -13,26 +11,27 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Commande {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCommande;
+    Long idCommande;
 
-    private LocalDate dateCommande;
+    LocalDate dateCommande;
 
-    private Integer pourcentageRemise;
+    Integer pourcentageRemise;
 
-    private Float totalRemise;
+    Float totalRemise;
 
-    private Float totalCommande;
+    Float totalCommande;
 
-    private Long note;
-
-    @ManyToOne
-    private Client client;
+    Long note;
 
     @ManyToOne
-    private Menu menu;
+    Client client;
+
+    @ManyToOne
+    Menu menu;
 
 
 

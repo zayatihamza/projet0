@@ -1,24 +1,23 @@
 package com.example.projet0.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Detailcomposant {
     @Id
-    private Long idDetailComposant;
+    Long idDetailComposant;
     float imc;
 
     @Enumerated(EnumType.STRING)
     Typecomposant typeComposant;
 
     @OneToOne(mappedBy = "detailcomposant")
-    private Composant composant;
+    Composant composant;
 }

@@ -1,10 +1,8 @@
 package com.example.projet0.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.Set;
 
@@ -13,23 +11,24 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class Menu {
     @Id
-    private Long idMenu;
+    Long idMenu;
 
-    private String libelleMenu;
+    String libelleMenu;
 
     @Enumerated(EnumType.STRING)
-    private TypeMenu typeMenu;
+    TypeMenu typeMenu;
 
-    private float prixTotal;
+    float prixTotal;
 
     @OneToMany(mappedBy = "menu")
-    private Set<Commande> commande;
+    Set<Commande> commande;
 
     @ManyToMany
-    private Set<ChefCuisinier> chefCuisiniers;
+    Set<ChefCuisinier> chefCuisiniers;
 
     @OneToMany(mappedBy = "menu")
-    private Set<Composant> composants;
+    Set<Composant> composants;
 }

@@ -18,15 +18,15 @@ public class Restaurant {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idRestaurant;
+    Long idRestaurant;
 
-    private String nom;
+    String nom;
 
-    private Long nbPlacesMax;
+    Long nbPlacesMax;
 
     @ManyToOne
     ChaineRestauration chaineRestauration;
 
     @OneToMany
-    private Set<Menu> menus;
+    Set<Menu> menus;
 }
