@@ -10,9 +10,11 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Detailcomposant {
+public class DetailComposant {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long idDetailComposant;
+
     float imc;
 
     @Enumerated(EnumType.STRING)

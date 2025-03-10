@@ -2,15 +2,17 @@ package com.example.projet0.services;
 
 import com.example.projet0.entities.Restaurant;
 import com.example.projet0.repositories.RestaurantRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+
+@Service
+@AllArgsConstructor
 public class RestaurantServiceImpl implements IRestaurantService{
-
     RestaurantRepository restaurantRepository;
-
-
     @Override
     public Restaurant addRestaurant(Restaurant e) {
         return restaurantRepository.save(e);

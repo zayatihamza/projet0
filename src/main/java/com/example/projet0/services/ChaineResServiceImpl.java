@@ -2,16 +2,22 @@ package com.example.projet0.services;
 
 import com.example.projet0.entities.ChaineRestauration;
 import com.example.projet0.repositories.ChaineRestaurationRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+
+@Service
+@AllArgsConstructor
 public class ChaineResServiceImpl implements IChaineRestaurationService {
     ChaineRestaurationRepository chaineRestaurationRepository;
     @Override
     public List<ChaineRestauration> retrieveAllChaines() {
 
         return (List<ChaineRestauration>) chaineRestaurationRepository.findAll();
+
     }
 
     @Override

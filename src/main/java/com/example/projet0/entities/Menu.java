@@ -12,8 +12,11 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Table(name = "Menu")
 public class Menu {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idMenu")
     Long idMenu;
 
     String libelleMenu;

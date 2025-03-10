@@ -1,9 +1,6 @@
 package com.example.projet0.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -15,13 +12,16 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Composant {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long idComposant;
+
     String nomComposant;
+
     float prix;
 
     @ManyToOne
     Menu menu;
 
     @OneToOne
-    Detailcomposant detailcomposant;
+    DetailComposant detailcomposant;
 }

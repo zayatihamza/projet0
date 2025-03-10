@@ -2,10 +2,14 @@ package com.example.projet0.services;
 
 import com.example.projet0.entities.Client;
 import com.example.projet0.repositories.ClientRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@AllArgsConstructor
 public class ClientServiceImpl implements IClientService{
 
     ClientRepository clientRepository;
@@ -38,5 +42,10 @@ public class ClientServiceImpl implements IClientService{
     @Override
     public List<Client> addClients(List<Client> clients) {
         return (List<Client>) clientRepository.saveAll(clients);
+    }
+
+    @Override
+    public Iterable<Client> addListClients(List<Client> clients) {
+        return clientRepository.saveAll(clients);
     }
 }

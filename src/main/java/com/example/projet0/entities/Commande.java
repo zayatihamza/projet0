@@ -33,8 +33,4 @@ public class Commande {
     @ManyToOne
     Menu menu;
 
-
-
-
-
 }

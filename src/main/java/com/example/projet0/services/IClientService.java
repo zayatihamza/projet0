@@ -11,4 +11,5 @@ public interface IClientService {
     Client retrieveClient(Long idClient);
     void removeClient(Long idClient);
     List<Client> addClients (List<Client> clients);
+    Iterable<Client> addListClients(List<Client> clients);
 }

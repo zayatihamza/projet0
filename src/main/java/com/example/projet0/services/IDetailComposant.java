@@ -1,15 +1,15 @@
 package com.example.projet0.services;
 
-import com.example.projet0.entities.Detailcomposant;
+import com.example.projet0.entities.DetailComposant;
 
 import java.util.List;
 
 public interface IDetailComposant {
-    List<Detailcomposant> retrieveAllDetailcomposants();
-    Detailcomposant addDetailcomposant(Detailcomposant e);
-    Detailcomposant updateDetailcomposant(Detailcomposant e);
-    Detailcomposant retrieveDetailcomposant(Long idDetailcomposant);
+    List<DetailComposant> retrieveAllDetailcomposants();
+    DetailComposant addDetailcomposant(DetailComposant e);
+    DetailComposant updateDetailcomposant(DetailComposant e);
+    DetailComposant retrieveDetailcomposant(Long idDetailcomposant);
     void removeDetailcomposant(Long idDetailcomposant);
-    List<Detailcomposant> addDetailcomposants(List<Detailcomposant> detailcomposants);
+    List<DetailComposant> addDetailcomposants(List<DetailComposant> detailcomposants);
 
 }

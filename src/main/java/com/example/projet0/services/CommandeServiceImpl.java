@@ -2,15 +2,16 @@ package com.example.projet0.services;
 
 import com.example.projet0.entities.Commande;
 import com.example.projet0.repositories.CommandeRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
+@AllArgsConstructor
 public class CommandeServiceImpl implements ICommandeService {
     private CommandeRepository commandeRepository;
 
-    public CommandeServiceImpl(CommandeRepository commandeRepository) {
-        this.commandeRepository = commandeRepository;
-    }
 
     @Override
     public Commande addCommande(Commande e) {

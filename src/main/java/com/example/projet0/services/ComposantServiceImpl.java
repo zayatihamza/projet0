@@ -2,10 +2,14 @@ package com.example.projet0.services;
 
 import com.example.projet0.entities.Composant;
 import com.example.projet0.repositories.ComposantRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@AllArgsConstructor
 public class ComposantServiceImpl implements IComposantService {
 
     ComposantRepository composantRepository;

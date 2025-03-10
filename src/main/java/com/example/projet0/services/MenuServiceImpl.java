@@ -2,15 +2,16 @@ package com.example.projet0.services;
 
 import com.example.projet0.entities.Menu;
 import com.example.projet0.repositories.MenuRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@AllArgsConstructor
 public class MenuServiceImpl implements IMenuService{
     MenuRepository menuRepository;
-    public MenuServiceImpl(MenuRepository menuRepository) {
-        this.menuRepository = menuRepository;
-    }
     @Override
     public Menu addMenu(Menu e) {
         return menuRepository.save(e);

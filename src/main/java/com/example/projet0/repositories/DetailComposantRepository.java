@@ -1,7 +1,9 @@
 package com.example.projet0.repositories;
 
-import com.example.projet0.entities.Detailcomposant;
+import com.example.projet0.entities.DetailComposant;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface DetailComposantRepository extends CrudRepository<Detailcomposant,Long> {
+@Repository
+public interface DetailComposantRepository extends CrudRepository<DetailComposant,Long> {
 }

@@ -2,10 +2,14 @@ package com.example.projet0.services;
 
 import com.example.projet0.entities.ChefCuisinier;
 import com.example.projet0.repositories.ChefRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@AllArgsConstructor
 public class ChefServiceImpl implements IChefService{
 
     ChefRepository chefRepository;
