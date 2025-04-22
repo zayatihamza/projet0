@@ -13,4 +13,6 @@ public interface RestaurantRepository extends CrudRepository<Restaurant,Long> {
 
     List<Restaurant> findByNbPlacesMaxGreaterThanAndChaineRestaurationDateCreationBefore(Integer capacite, LocalDate date);
 
+    Restaurant findByNom(String nom);
+
 }

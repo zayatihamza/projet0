@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ChaineRestaurationRepository extends CrudRepository<ChaineRestauration, Long> {
+    ChaineRestauration findByLibelle(String libelle);
 
 }

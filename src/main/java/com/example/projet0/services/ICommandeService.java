@@ -11,4 +11,7 @@ public interface ICommandeService {
     void removeCommande(Long idCommande);
     List<Commande> retrieveAllCommandes();
     List<Commande> addCommandes(List<Commande> commandes);
+    void findCurrentYearCommandesOrderByNote();
+    void menuPlusCommande();
+
 }

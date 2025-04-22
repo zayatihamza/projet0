@@ -1,6 +1,7 @@
 package com.example.projet0.controller;
 
 
+import com.example.projet0.entities.Composant;
 import com.example.projet0.entities.Menu;
 import com.example.projet0.entities.TypeMenu;
 import com.example.projet0.entities.Typecomposant;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @AllArgsConstructor
@@ -64,6 +66,12 @@ public class MenuController {
     @GetMapping("/get-menu-by-type-menu/{type-menu}")
     public List<Menu> getMenuByTypeMenu(@PathVariable("type-menu") String typeMenu) {
         return menuRepository.findByTypeMenuAndOrderByPrixTotal(TypeMenu.valueOf(typeMenu));
+    }
+
+    //expose ajoutComposantEtMiseAJourPrixTotal
+    @PutMapping("/ajoutComposantEtMiseAJourPrixTotal/{idMenu}/{composants}")
+    public Menu ajoutComposantEtMiseAJourPrixTotal(@PathVariable("idMenu") Long idMenu, @PathVariable("composants") Set<Composant> composants) {
+        return menuService.ajoutComposantEtMiseAJourPrixTotal(idMenu, composants);
     }
 
 }

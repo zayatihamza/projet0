@@ -19,4 +19,7 @@ public interface MenuRepository extends CrudRepository<Menu,Long> {
     @Query("select m.libelleMenu from Menu m  join m.composants c where c.detailcomposant  = :typeComposant")
     List <Menu> findByTypeComposant(Typecomposant typeComposant);
 
+    @Query("select m.libelleMenu from Menu m where m.typeMenu = :typeMenu order by m.prixTotal asc")
+    List<String> findNomMenuParTypeMenuOrdonneParPrixTotal(TypeMenu typeMenu);
+
 }

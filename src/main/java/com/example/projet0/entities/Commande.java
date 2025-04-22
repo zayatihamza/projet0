@@ -30,7 +30,7 @@ public class Commande {
     @ManyToOne
     Client client;
 
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.EAGER)
     Menu menu;
 
 }

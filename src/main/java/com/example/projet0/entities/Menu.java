@@ -26,7 +26,7 @@ public class Menu {
 
     float prixTotal;
 
-    @OneToMany(mappedBy = "menu")
+    @OneToMany(mappedBy = "menu", fetch = FetchType.EAGER)
     Set<Commande> commande;
 
     @ManyToMany
